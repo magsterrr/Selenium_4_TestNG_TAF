@@ -8,11 +8,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class LoginPage extends iSkillo {
-    //const
-    public static final String LOGIN_PAGE_URL = "http://training.skillo-bg.com:4300/users/login";
+public class LoginPage extends BasePage {
+    public static final String LOGIN_PAGE_URL = "http://training.skillo-bg.com:4200/users/login";
 
-    //WebElements or other  UI Map
     @FindBy (css = "p.h4")
     private WebElement loginPageHeaderTitle;
     @FindBy (id = "defaultLoginFormUsername")
@@ -28,22 +26,18 @@ public class LoginPage extends iSkillo {
     @FindBy (xpath = "//a[contains(.,'Register')]")
     private WebElement loginFormRegistrationLink;
 
-    //Create a constructor
     public LoginPage (WebDriver driver, Logger log) {
         super(driver,log);
         PageFactory.initElements(driver,this);
     }
 
-    //User Actions
     public void  provideUserName(String userName) {
         waitAndTypeTextInField(usernameInputField,userName);
     }
 
-    public void providePassword(String userPassword){
-        waitAndTypeTextInField(passwordInputField,userPassword);
-    }
+    public void providePassword(String userPassword) { waitAndTypeTextInField(passwordInputField,userPassword); }
 
-    public void clickOnLoginSubmitButton(){
+    public void clickOnLoginSubmitButton() {
         waitAndClickOnWebElement(loginFormSubmitButton);
     }
 
@@ -53,7 +47,6 @@ public class LoginPage extends iSkillo {
         clickOnLoginSubmitButton();
     }
 
-    //getters
     public  String getUserNamePlaceHolder () {
         wait.until(ExpectedConditions.visibilityOf(usernameInputField));
         return usernameInputField.getAttribute("value");

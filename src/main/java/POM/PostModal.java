@@ -4,7 +4,7 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class PostModal extends iSkillo {
+public class PostModal extends BasePage {
     private final WebElement modalElement;
     public PostModal (WebDriver driver, Logger log) {
         super(driver,log);
@@ -12,7 +12,6 @@ public class PostModal extends iSkillo {
     }
 
     public boolean isImageVisible() {
-
         try {
             WebElement image = modalElement.findElement(By.cssSelector(".post-modal-img img"));
             return wait.until(ExpectedConditions.visibilityOf(image)).isDisplayed();

@@ -9,8 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.io.File;
 
-public class PostPage extends iSkillo {
-    final String POST_PAGE_URL = "http://training.skillo-bg.com:4300/posts/create";
+public class PostPage extends BasePage {
+    final String POST_PAGE_URL = "http://training.skillo-bg.com:4200/posts/create";
     @FindBy (css = "img.image-preview")
     private WebElement image;
     @FindBy (css = "input.input-lg")
@@ -20,7 +20,7 @@ public class PostPage extends iSkillo {
     @FindBy (name = "caption")
     private WebElement captionElement;
     @FindBy (id = "create-post")
-    private WebElement createP0ostButton;
+    private WebElement createPostButton;
 
     public PostPage (WebDriver driver, Logger log) {
         super(driver,log);
@@ -29,7 +29,6 @@ public class PostPage extends iSkillo {
 
     public boolean isImageVisible() {
         boolean isVisible = false;
-
         try {
             isVisible = wait.until(ExpectedConditions.visibilityOf(image)).isDisplayed();
             log.info("CONFIRMATION # The file is visible.");
@@ -49,18 +48,18 @@ public class PostPage extends iSkillo {
 
     public void uploadPicture(File file) {
         uploadField.sendKeys(file.getAbsolutePath());
-        log.info("CONFIRMATION # The file was successfully uploaded");
+        log.info("CONFIRMATION # The file was successfully uploaded.");
     }
 
     public void providePostCaption(String caption) {
         wait.until(ExpectedConditions.visibilityOf(captionElement));
         captionElement.sendKeys(caption);
-        log.info("CONFIRMATION # The user has provided caption text :"+caption);
+        log.info("CONFIRMATION # The user has provided caption text: " +caption);
     }
 
     public void clickCreatePostButton() {
-        wait.until(ExpectedConditions.visibilityOf(createP0ostButton));
-        createP0ostButton.click();
-        log.info("CONFIRMATION # The user has clicked on create post button");
+        wait.until(ExpectedConditions.visibilityOf(createPostButton));
+        createPostButton.click();
+        log.info("CONFIRMATION # The user has clicked on create post button.");
     }
 }
