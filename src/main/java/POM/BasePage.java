@@ -24,19 +24,15 @@ public class BasePage {
         wait.until(ExpectedConditions.visibilityOf(elm));
         wait.until(ExpectedConditions.elementToBeClickable(elm));
         elm .click();
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("return document.readyState").equals("complete");
-        //use method waitPageFullyLoaded instead of two rows above
+        waitPageTobeFullyLoaded();
     }
 
     public void waitAndTypeTextInField(WebElement textField, String inputText) {
         wait.until(ExpectedConditions.visibilityOf(textField));
         textField.clear();
         textField.sendKeys(inputText);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("return document.readyState").equals("complete");
-        //use method waitPageFullyLoaded instead of two rows above
 
+        waitPageTobeFullyLoaded();
     }
 
     public String requestedUrl(String pageSuffix ) {

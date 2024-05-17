@@ -16,6 +16,8 @@ public class HomePage extends BasePage {
     private WebElement navigationLoginButton;
     @FindBy(id = "nav-link-new-post")
     private WebElement navigationNewPostButton;
+    @FindBy(id = "nav-link-profile")
+    private WebElement navigationProfileButton;
     @FindBy(xpath = "//ul[contains(@class,'navbar-nav my-ml d-none d-md-block')]")
     private WebElement navigationLogOutButton;
 
@@ -34,6 +36,10 @@ public class HomePage extends BasePage {
 
     public void clickOnNavButtonForNewPost() {
         waitAndClickOnWebElement(navigationNewPostButton);
+    }
+
+    public void clickOnProfileButton() {
+        waitAndClickOnWebElement(navigationProfileButton);
     }
 
     public void waitNewPostNavigationLinkToAppear() {

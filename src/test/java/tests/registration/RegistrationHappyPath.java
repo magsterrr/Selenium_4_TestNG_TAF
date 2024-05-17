@@ -14,8 +14,8 @@ public class RegistrationHappyPath extends TestBase {
     @Test
     public void VerifyUserCanRegisterWithValidData() throws InterruptedException {
 
-        final String username = "magster test";
-        final String email = "magster@abv.bg";
+        final String username = "testingmagster";
+        final String email = "testiiing@abv.bg";
         final String password = "123456";
         final String confirmPassword = "123456";
 
@@ -39,6 +39,9 @@ public class RegistrationHappyPath extends TestBase {
         log.info("STEP 6: The user has clicked on the register button.");
         registrationPage.clickOnRegistrationButton();
 
+        HomePage homePage = new HomePage(driver, log);
 
+        boolean isShownLogOutButton = homePage.isLogOutButtonShown();
+        Assert.assertTrue(isShownLogOutButton);
     }
 }

@@ -10,7 +10,6 @@ import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
-
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
@@ -50,7 +49,6 @@ public class TestBase {
     @AfterMethod(alwaysRun = true)
     public void tearDown(ITestResult testResult) {
         log.info("Close driver");
-        // Close browser
         takeScreenshot(testResult);
         driver.quit();
     }

@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import base.TestBase;
 
-public class LoginTest extends TestBase {
+public class LoginHappyPath extends TestBase {
     public static final int WAIT = 3333;
 
     @Test
@@ -35,5 +35,8 @@ public class LoginTest extends TestBase {
 
         log.info("STEP 6: The user has clicked on login submit button");
         loginPage.clickOnLoginSubmitButton();
+
+        boolean isShownLogOutButton = homePage.isLogOutButtonShown();
+        Assert.assertTrue(isShownLogOutButton);
     }
 }

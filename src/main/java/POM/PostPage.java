@@ -60,6 +60,6 @@ public class PostPage extends BasePage {
     public void clickCreatePostButton() {
         wait.until(ExpectedConditions.visibilityOf(createPostButton));
         createPostButton.click();
-        log.info("CONFIRMATION # The user has clicked on create post button.");
+        log.info("CONFIRMATION # The user has clicked on the submit post button.");
     }
 }

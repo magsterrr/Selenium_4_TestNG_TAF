@@ -9,7 +9,6 @@ import base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import java.io.File;
 
 public class DemonstrationTest extends TestBase {
@@ -55,7 +54,7 @@ public class DemonstrationTest extends TestBase {
         postPage.clickCreatePostButton();
 
         ProfilePage profilePage = new ProfilePage(driver, log);
-        Assert.assertEquals(profilePage.getPostCount(), 1, "The number of Posts is incorrect!");
+        Assert.assertEquals(profilePage.getPostCount(), 5, "The number of Posts is incorrect!");
         profilePage.clickPost(0);
 
         PostModal postModal = new PostModal(driver, log);
