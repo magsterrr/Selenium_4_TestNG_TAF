@@ -6,9 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
-
-import java.io.File;
 import java.util.List;
 
 
@@ -62,11 +59,6 @@ public class ProfilePage extends BasePage {
     Actions action = new Actions(driver);
     public void HoverOverProfilePicture () {
         action.moveToElement(uploadImage).perform();
-    }
-
-    public void UploadNewProfilePicture(File file) {
-        uploadImage.sendKeys(file.getAbsolutePath());
-        log.info("CONFIRMATION # The file was successfully uploaded.");
     }
 
     public ProfilePage (WebDriver driver, Logger log) {

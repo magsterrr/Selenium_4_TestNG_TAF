@@ -42,10 +42,6 @@ public class HomePage extends BasePage {
         waitAndClickOnWebElement(navigationProfileButton);
     }
 
-    public void waitNewPostNavigationLinkToAppear() {
-        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy((By) navigationNewPostButton));
-    }
-
     public boolean isLogOutButtonShown() {
         boolean isButtonShown = false;
         log.info("ACTION @ The user is verifying if the navigation log out button is presented");
