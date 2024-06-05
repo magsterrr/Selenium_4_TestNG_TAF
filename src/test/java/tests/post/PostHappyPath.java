@@ -10,7 +10,7 @@ import java.io.File;
 public class PostHappyPath extends TestBase {
     @DataProvider(name = "PostTestDataProvider")
     public Object[][] getUsers() {
-        File postPicture = new File("src/test/java/resourcesUpload/testUpload.jpg");
+        File postPicture = new File("src/test/resources/resourcesUpload/testUpload.jpg");
         String caption = "Testing the create post caption";
 
         return new Object[][]{{

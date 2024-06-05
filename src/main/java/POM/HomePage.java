@@ -11,7 +11,6 @@ import org.openqa.selenium.TimeoutException;
 
 public class HomePage extends BasePage {
     public static final String HOME_PAGE_URL = "posts/all";
-
     @FindBy(id = "nav-link-login")
     private WebElement navigationLoginButton;
     @FindBy(id = "nav-link-new-post")

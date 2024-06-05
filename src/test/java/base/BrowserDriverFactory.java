@@ -3,12 +3,6 @@ package base;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-
-import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
 
 public class BrowserDriverFactory {
     public static final String TEST_RESOURCES_DIR = "src/main/resources";
@@ -28,14 +22,9 @@ public class BrowserDriverFactory {
 
         switch (browser) {
             case "chrome":
-                System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
+                System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
                 //Take ScreenShot
-                driver.set(new ChromeDriver(configChromeOptions()));
-                break;
-
-            case "firefox":
-                System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver.exe");
-                driver.set(new FirefoxDriver());
+                driver.set(new ChromeDriver());
                 break;
 
             default:
@@ -46,14 +35,5 @@ public class BrowserDriverFactory {
         }
 
         return driver.get();
-    }
-
-    private ChromeOptions configChromeOptions() {
-        Map<String, Object> prefs = new HashMap<>();
-
-        prefs.put("download.default_directory", System.getProperty("user.dir").concat("\\").concat(DOWNLOAD_DIR));
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.setExperimentalOption("prefs", prefs);
-        return chromeOptions;
     }
 }

@@ -10,7 +10,6 @@ import java.util.List;
 
 
 public class ProfilePage extends BasePage {
-
     @FindBy (xpath = "//div[contains(@class,'edit-profile-pic ')]")
     private WebElement uploadImage;
 
@@ -37,8 +36,6 @@ public class ProfilePage extends BasePage {
 
     @FindBy (xpath = "//div[contains(@aria-label,'Post disliked')]")
     private WebElement postDislikeMessage;
-
-
 
     public void ClickOnYesButton() {
         waitAndClickOnWebElement(areYouSureYesButton);

@@ -10,7 +10,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginPage extends BasePage {
     public static final String LOGIN_PAGE_URL = "http://training.skillo-bg.com:4200/users/login";
-
     @FindBy (css = "p.h4")
     private WebElement loginPageHeaderTitle;
     @FindBy (id = "defaultLoginFormUsername")

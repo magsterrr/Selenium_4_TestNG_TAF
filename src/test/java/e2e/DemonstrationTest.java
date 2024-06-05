@@ -30,7 +30,6 @@ public class DemonstrationTest extends TestBase {
             String username,
             File file,
             String caption) {
-        final String HOME_PAGE_URL = "posts/all";
         final String LOGIN_PAGE_URL = "users/login";
 
         HomePage homePage = new HomePage(driver, log);

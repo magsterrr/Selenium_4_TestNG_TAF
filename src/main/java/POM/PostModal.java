@@ -10,7 +10,6 @@ public class PostModal extends BasePage {
         super(driver,log);
         this.modalElement = driver.findElement(By.className("post-modal"));
     }
-
     public boolean isImageVisible() {
         try {
             WebElement image = modalElement.findElement(By.cssSelector(".post-modal-img img"));

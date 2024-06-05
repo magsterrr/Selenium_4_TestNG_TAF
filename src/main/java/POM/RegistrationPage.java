@@ -11,21 +11,17 @@ import org.openqa.selenium.By;
 
 
 public class RegistrationPage extends BasePage {
-
     public static final String REGISTRATION_PAGE_URL = "users/register";
 
     @FindBy (xpath = "//input[contains(@formcontrolname,'username')]")
     private WebElement registrationUsernameField;
-
     @FindBy (xpath = "//input[contains(@formcontrolname,'email')]")
     private WebElement registrationEmailField;
-
     @FindBy (id = "defaultRegisterFormPassword")
     private WebElement registrationPasswordField;
 
     @FindBy (id = "defaultRegisterPhonePassword")
     private WebElement registrationConfirmPasswordField;
-
     @FindBy (id = "sign-in-button")
     private WebElement signInButton;
 

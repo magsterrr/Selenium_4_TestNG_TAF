@@ -7,17 +7,17 @@ import base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import static utils.ContentGeneration.*;
+
 public class RegistrationHappyPath extends TestBase {
 
-    public static final int WAIT = 3333;
-
     @Test
-    public void VerifyUserCanRegisterWithValidData() throws InterruptedException {
+    public void VerifyUserCanRegisterWithValidData()  {
 
-        final String username = "testingmagster";
-        final String email = "testiiing@abv.bg";
-        final String password = "123456";
-        final String confirmPassword = "123456";
+        final String username = createUser();
+        final String email = createEmail();
+        final String password = createPassword();
+        final String confirmPassword = password;
 
         RegistrationPage registrationPage = new RegistrationPage(super.driver, log);
 

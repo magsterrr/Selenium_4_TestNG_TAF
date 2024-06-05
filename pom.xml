@@ -10,6 +10,15 @@
     <name>Selenium_4_TestNG_TAF</name>
     <url>http://maven.apache.org</url>
 
+    <inceptionYear>2024</inceptionYear>
+    <developers>
+        <developer>
+            <id>MT</id>
+            <name>Magdalena Trifonova</name>
+            <email>m.trifonova2@yahoo.com</email>
+        </developer>
+    </developers>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>14</java.version>
@@ -46,13 +55,6 @@
             <artifactId>log4j-api</artifactId>
             <version>2.11.1</version>
         </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>2.11.1</version>
-
-        </dependency>
-
     </dependencies>
 
     <build>
@@ -75,6 +77,7 @@
                         <suiteXmlFiles>
                             <suiteXmlFile>testng.xml</suiteXmlFile>
                         </suiteXmlFiles>
+                        <reportsDirectory>${basedir}/src/main/resources/reports</reportsDirectory>
                     </configuration>
                 </plugin>
             </plugins>

@@ -42,6 +42,5 @@ public class DeletePostHappyPath extends TestBase {
         log.info("The user has confirmed the deletion.");
 
         profilePage.isDeletedMessageVisible();
-
     }
 }
